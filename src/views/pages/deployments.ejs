@@ -1,0 +1,15 @@
+<H1>Deployments</h1>
+  <div class="container">
+      <ul>
+          <% deployments.forEach( deployment => { %>
+              <li>
+                  <h1><%= deployment.id %></h1>
+                  <p><%= deployment.task %></p>
+                  <p><%= deployment.environment %></p>
+                  <p><%= deployment.description %></p>
+                  <p><%= deployment.description %></p>
+                  <p><%= deployment.created_at %></p>
+              </li>
+          <% }) %>
+      </ul>
+</div>

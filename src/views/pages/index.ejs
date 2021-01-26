@@ -1,2 +1,9 @@
 <H1>Welome to GithubDeploymentDeleter</h1>
-<h2><%= msg %></h2>
+  <h2><%= msg %></h2>
+
+<form action="<%=`/deployments`%>" method="GET">
+  <input name="owner" placeholder="Owner">
+  <input name="repo" placeholder="Repo">
+
+  <button type="submit">Submit</button>
+</form>
