@@ -1,12 +1,12 @@
 import * as http from 'http';
 import { app } from './app';
+import { config } from './config';
 
 export const startServer = async (): Promise<http.Server> => {
     const server: http.Server = http.createServer(await app());
-    const port: number = 8080;
 
-    server.listen(port, () => {
-        console.log(`server running on port ${port}`);
+    server.listen(config.server.port, () => {
+        console.log(`server running on port ${config.server.port}`);
     });
 
     return server;

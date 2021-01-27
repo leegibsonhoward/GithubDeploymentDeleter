@@ -1,5 +1,6 @@
 import { Db } from 'mongodb';
 import mongoose from 'mongoose';
+import { config } from '../../config';
 
 const mongoOptions = {
     useNewUrlParser: true,
@@ -8,11 +9,8 @@ const mongoOptions = {
 
 // (TODO): add custom logger and remove console.log's
 const mongooseConnectDb = async (): Promise<Db> => {
-    // (TODO): move URI to config file
-    const mongoDB_URI = 'mongodb://127.0.0.1:27017/ghdd-db_dev';
-
     try {
-        await mongoose.connect(mongoDB_URI, mongoOptions);
+        await mongoose.connect(`${config.db.databaseURI}`, mongoOptions);
         console.log('database connected');
     } catch (err) {
         throw new Error(err);
