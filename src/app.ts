@@ -1,5 +1,7 @@
 import express from 'express';
 import path from 'path';
+import { mongooseConnectDb } from './db/connection/connect.db';
+
 import layouts from 'express-ejs-layouts';
 import methodOverride from 'method-override';
 
@@ -8,6 +10,8 @@ import { router } from './routes/router';
 export const app = async (): Promise<express.Application> => {
     const app: express.Application = express();
     try {
+        await mongooseConnectDb();
+
         // Setup ejs view templates
         // (TODO): maybe move to seperate function
         app.set('views', path.join(__dirname, 'views'));
