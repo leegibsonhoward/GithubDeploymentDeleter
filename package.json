@@ -1,5 +1,5 @@
 {
-  "name": "github-deployment-deleter",
+  "name": "gdd",
   "version": "1.0.0",
   "description": "View and delete github deployment environments",
   "main": "./src/server.ts",
