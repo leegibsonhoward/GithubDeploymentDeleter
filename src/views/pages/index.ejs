@@ -1,9 +1,34 @@
-<H1>Welome to GDD</h1>
-  <h2><%= msg %></h2>
+<div class="hero is-info is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <h3 class="title is-size-4 has-text-white mb-0">Github</h3>
+        <h3 class="title is-size-5 has-text-white">DeploymentDeleter</h3>
 
-<form action="<%=`/deployments`%>" method="GET">
-  <input name="owner" placeholder="Owner">
-  <input name="repo" placeholder="Repo">
-
-  <button type="submit">Submit</button>
-</form>
+          <hr class="login-hr" />
+          <p class="subtitle has-text-white">
+            Please enter owner and repo to begin!
+          </p>
+          <div class="box">      
+            <form action="<%=`/deployments`%>" method="GET">
+              <div class="field">
+                <label class="label has-text-left">Owner / Org Name</label>
+                <div class="control">
+                  <input class="input" name="owner" type="text" placeholder="Owner" autofocus="">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label has-text-left">Repository</label>
+                <div class="control">
+                  <input class="input" name="repo" type="text" placeholder="Repo">
+                </div>
+              </div>
+              <button type="submit" class="button is-block is-success  is-fullwidth">Submit</button>
+            </form>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
