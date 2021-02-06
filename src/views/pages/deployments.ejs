@@ -1,15 +1,50 @@
-<H1>Deployments</h1>
-  <div class="container">
-      <ul>
-          <% deployments.forEach( deployment => { %>
-              <li>
-                  <h1><%= deployment.id %></h1>
-                  <p><%= deployment.task %></p>
-                  <p><%= deployment.environment %></p>
-                  <p><%= deployment.description %></p>
-                  <p><%= deployment.description %></p>
-                  <p><%= deployment.created_at %></p>
-              </li>
-          <% }) %>
-      </ul>
-</div>
+<section class="hero is-info is-fullheight-with-navbar">
+  <div class="section">
+    <div class="container">
+      <h3 class="title has-text-centered">Deployments</h3>
+      <div class="box">
+        <div class="buttons">
+          <button class="button is-danger">Delete All</button>
+          <span
+            >Warning this will set all enviroments inactive and delete
+            them</span
+          >
+        </div>
+        <hr />
+        <div class="table-container">
+          <table class="table is-fullwidth">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Environment</th>
+                <th>Description</th>
+                <th>Task</th>
+                <th>Created</th>
+                <th>Payload</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% deployments.forEach( deployment=> { %>
+              <tr>
+                <td><%= deployment.id %></td>
+                <td><%= deployment.environment %></td>
+                <td><%= deployment.description %></td>
+                <td><%= deployment.task %></td>
+                <td><%= deployment.created_at %></td>
+                <td>
+                  <a href="<%= deployment.payload['web_url'] %>">Link</a>
+                </td>
+                <td>
+                  <div class="buttons">
+                    <button class="button is-danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
